@@ -4,7 +4,7 @@
     {
         private static InIReader Reader = new InIReader(@".\Config.ini");
 
-        public static string TargetPath = @"C:\Release\Client";
+        public static string TargetPath = @"D:\Debug\Client";
         public static string Host = "127.0.0.1";
         public static string UserName = "InputUserName";
         public static string UserPassword = "InputPassword";

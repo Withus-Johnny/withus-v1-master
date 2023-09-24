@@ -13,6 +13,8 @@ namespace Publisher
         [STAThread]
         static void Main()
         {
+            Settings.Load();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(PMain = new PMain());
