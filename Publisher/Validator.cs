@@ -19,8 +19,9 @@ namespace Publisher
 			try
 			{
 				Program.PMain.menuItem_Publishing.Enabled = false;
-				Program.PMain.statusLabel_ComplatedCount.Text = "0";
 				Program.PMain.statusLabel_All.Text = "0";
+				Program.PMain.statusLabel_RemainingCount.Text = "0";
+				Program.PMain.SpeedLabelText = "0";
 
 				DirectoryInfo di = new DirectoryInfo(path);
 				if (di.Exists)

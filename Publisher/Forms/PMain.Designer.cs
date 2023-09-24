@@ -43,11 +43,14 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.label_FileName = new System.Windows.Forms.Label();
 			this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-			this.statusLabel_ComplatedCount = new System.Windows.Forms.ToolStripStatusLabel();
-			this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusLabel_All = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.statusLabel_RemainingCount = new System.Windows.Forms.ToolStripStatusLabel();
 			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
 			this.InterfaceTimer = new System.Windows.Forms.Timer(this.components);
+			this.statusLabel_Speed = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+			this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.menuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.panel_Container.SuspendLayout();
@@ -61,7 +64,7 @@
             this.프로그램ToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(657, 36);
+			this.menuStrip1.Size = new System.Drawing.Size(657, 35);
 			this.menuStrip1.TabIndex = 0;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -101,9 +104,12 @@
 			this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel2,
-            this.statusLabel_ComplatedCount,
             this.toolStripStatusLabel3,
-            this.statusLabel_All});
+            this.statusLabel_All,
+            this.toolStripStatusLabel4,
+            this.statusLabel_RemainingCount,
+            this.toolStripStatusLabel1,
+            this.statusLabel_Speed});
 			this.statusStrip1.Location = new System.Drawing.Point(0, 420);
 			this.statusStrip1.Name = "statusStrip1";
 			this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 20, 0);
@@ -120,9 +126,9 @@
 			this.panel_Container.Controls.Add(this.progressBar2);
 			this.panel_Container.Controls.Add(this.progressBar1);
 			this.panel_Container.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel_Container.Location = new System.Drawing.Point(0, 36);
+			this.panel_Container.Location = new System.Drawing.Point(0, 35);
 			this.panel_Container.Name = "panel_Container";
-			this.panel_Container.Size = new System.Drawing.Size(657, 384);
+			this.panel_Container.Size = new System.Drawing.Size(657, 385);
 			this.panel_Container.TabIndex = 2;
 			// 
 			// menuItem_Publishing
@@ -177,26 +183,26 @@
 			// toolStripStatusLabel2
 			// 
 			this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-			this.toolStripStatusLabel2.Size = new System.Drawing.Size(448, 25);
+			this.toolStripStatusLabel2.Size = new System.Drawing.Size(293, 25);
 			this.toolStripStatusLabel2.Spring = true;
-			// 
-			// statusLabel_ComplatedCount
-			// 
-			this.statusLabel_ComplatedCount.Name = "statusLabel_ComplatedCount";
-			this.statusLabel_ComplatedCount.Size = new System.Drawing.Size(19, 25);
-			this.statusLabel_ComplatedCount.Text = "-";
-			// 
-			// toolStripStatusLabel3
-			// 
-			this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-			this.toolStripStatusLabel3.Size = new System.Drawing.Size(19, 25);
-			this.toolStripStatusLabel3.Text = "/";
 			// 
 			// statusLabel_All
 			// 
 			this.statusLabel_All.Name = "statusLabel_All";
 			this.statusLabel_All.Size = new System.Drawing.Size(19, 25);
 			this.statusLabel_All.Text = "-";
+			// 
+			// toolStripStatusLabel3
+			// 
+			this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+			this.toolStripStatusLabel3.Size = new System.Drawing.Size(94, 25);
+			this.toolStripStatusLabel3.Text = "전체 파일:";
+			// 
+			// statusLabel_RemainingCount
+			// 
+			this.statusLabel_RemainingCount.Name = "statusLabel_RemainingCount";
+			this.statusLabel_RemainingCount.Size = new System.Drawing.Size(19, 25);
+			this.statusLabel_RemainingCount.Text = "-";
 			// 
 			// richTextBox1
 			// 
@@ -206,7 +212,7 @@
 			this.richTextBox1.Location = new System.Drawing.Point(24, 177);
 			this.richTextBox1.Name = "richTextBox1";
 			this.richTextBox1.ReadOnly = true;
-			this.richTextBox1.Size = new System.Drawing.Size(606, 191);
+			this.richTextBox1.Size = new System.Drawing.Size(606, 192);
 			this.richTextBox1.TabIndex = 4;
 			this.richTextBox1.Text = "";
 			// 
@@ -215,6 +221,24 @@
 			this.InterfaceTimer.Enabled = true;
 			this.InterfaceTimer.Interval = 50;
 			this.InterfaceTimer.Tick += new System.EventHandler(this.InterfaceTimer_Tick);
+			// 
+			// statusLabel_Speed
+			// 
+			this.statusLabel_Speed.Name = "statusLabel_Speed";
+			this.statusLabel_Speed.Size = new System.Drawing.Size(19, 25);
+			this.statusLabel_Speed.Text = "-";
+			// 
+			// toolStripStatusLabel1
+			// 
+			this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+			this.toolStripStatusLabel1.Size = new System.Drawing.Size(52, 25);
+			this.toolStripStatusLabel1.Text = "속도:";
+			// 
+			// toolStripStatusLabel4
+			// 
+			this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+			this.toolStripStatusLabel4.Size = new System.Drawing.Size(94, 25);
+			this.toolStripStatusLabel4.Text = "남은 파일:";
 			// 
 			// PMain
 			// 
@@ -261,8 +285,11 @@
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
 		private System.Windows.Forms.RichTextBox richTextBox1;
 		private System.Windows.Forms.Timer InterfaceTimer;
+		public System.Windows.Forms.ToolStripStatusLabel statusLabel_RemainingCount;
 		public System.Windows.Forms.ToolStripStatusLabel statusLabel_All;
-		public System.Windows.Forms.ToolStripStatusLabel statusLabel_ComplatedCount;
 		public System.Windows.Forms.ToolStripMenuItem menuItem_Publishing;
+		private System.Windows.Forms.ToolStripStatusLabel statusLabel_Speed;
+		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
 	}
 }
