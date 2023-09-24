@@ -30,5 +30,10 @@ namespace Publisher.Forms
             // TODO: FREE
             Application.Exit();
         }
-    }
+
+		private void menuItem_Publishing_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
