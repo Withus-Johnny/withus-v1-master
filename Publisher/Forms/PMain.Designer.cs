@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+			this.components = new System.ComponentModel.Container();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.프로그램ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuItem_Config = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
 			this.menuItem_Close = new System.Windows.Forms.ToolStripMenuItem();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-			this.statusLabel_IsValid = new System.Windows.Forms.ToolStripStatusLabel();
 			this.panel_Container = new System.Windows.Forms.Panel();
 			this.menuItem_Publishing = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
@@ -48,6 +47,7 @@
 			this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.statusLabel_All = new System.Windows.Forms.ToolStripStatusLabel();
 			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+			this.InterfaceTimer = new System.Windows.Forms.Timer(this.components);
 			this.menuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.panel_Container.SuspendLayout();
@@ -61,7 +61,7 @@
             this.프로그램ToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(657, 36);
+			this.menuStrip1.Size = new System.Drawing.Size(657, 35);
 			this.menuStrip1.TabIndex = 0;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -74,7 +74,7 @@
             this.toolStripMenuItem2,
             this.menuItem_Close});
 			this.프로그램ToolStripMenuItem.Name = "프로그램ToolStripMenuItem";
-			this.프로그램ToolStripMenuItem.Size = new System.Drawing.Size(100, 30);
+			this.프로그램ToolStripMenuItem.Size = new System.Drawing.Size(100, 29);
 			this.프로그램ToolStripMenuItem.Text = "프로그램";
 			// 
 			// menuItem_Config
@@ -100,8 +100,6 @@
 			// 
 			this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.statusLabel_IsValid,
             this.toolStripStatusLabel2,
             this.statusLabel_ComplatedCount,
             this.toolStripStatusLabel3,
@@ -114,18 +112,6 @@
 			this.statusStrip1.TabIndex = 1;
 			this.statusStrip1.Text = "statusStrip1";
 			// 
-			// toolStripStatusLabel1
-			// 
-			this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-			this.toolStripStatusLabel1.Size = new System.Drawing.Size(112, 25);
-			this.toolStripStatusLabel1.Text = "유효성 검사:";
-			// 
-			// statusLabel_IsValid
-			// 
-			this.statusLabel_IsValid.Name = "statusLabel_IsValid";
-			this.statusLabel_IsValid.Size = new System.Drawing.Size(19, 25);
-			this.statusLabel_IsValid.Text = "-";
-			// 
 			// panel_Container
 			// 
 			this.panel_Container.Controls.Add(this.richTextBox1);
@@ -134,13 +120,14 @@
 			this.panel_Container.Controls.Add(this.progressBar2);
 			this.panel_Container.Controls.Add(this.progressBar1);
 			this.panel_Container.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel_Container.Location = new System.Drawing.Point(0, 36);
+			this.panel_Container.Location = new System.Drawing.Point(0, 35);
 			this.panel_Container.Name = "panel_Container";
-			this.panel_Container.Size = new System.Drawing.Size(657, 384);
+			this.panel_Container.Size = new System.Drawing.Size(657, 385);
 			this.panel_Container.TabIndex = 2;
 			// 
 			// menuItem_Publishing
 			// 
+			this.menuItem_Publishing.Enabled = false;
 			this.menuItem_Publishing.Name = "menuItem_Publishing";
 			this.menuItem_Publishing.Size = new System.Drawing.Size(270, 34);
 			this.menuItem_Publishing.Text = "배포 시작";
@@ -219,9 +206,15 @@
 			this.richTextBox1.Location = new System.Drawing.Point(24, 177);
 			this.richTextBox1.Name = "richTextBox1";
 			this.richTextBox1.ReadOnly = true;
-			this.richTextBox1.Size = new System.Drawing.Size(606, 191);
+			this.richTextBox1.Size = new System.Drawing.Size(606, 192);
 			this.richTextBox1.TabIndex = 4;
 			this.richTextBox1.Text = "";
+			// 
+			// InterfaceTimer
+			// 
+			this.InterfaceTimer.Enabled = true;
+			this.InterfaceTimer.Interval = 50;
+			this.InterfaceTimer.Tick += new System.EventHandler(this.InterfaceTimer_Tick);
 			// 
 			// PMain
 			// 
@@ -258,9 +251,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem menuItem_Close;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        public System.Windows.Forms.ToolStripStatusLabel statusLabel_IsValid;
-		private System.Windows.Forms.ToolStripMenuItem menuItem_Publishing;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
 		private System.Windows.Forms.Panel panel_Container;
 		private System.Windows.Forms.Label label_FileName;
@@ -268,9 +258,11 @@
 		private System.Windows.Forms.ProgressBar progressBar2;
 		private System.Windows.Forms.ProgressBar progressBar1;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-		private System.Windows.Forms.ToolStripStatusLabel statusLabel_ComplatedCount;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
-		private System.Windows.Forms.ToolStripStatusLabel statusLabel_All;
 		private System.Windows.Forms.RichTextBox richTextBox1;
+		private System.Windows.Forms.Timer InterfaceTimer;
+		public System.Windows.Forms.ToolStripStatusLabel statusLabel_All;
+		public System.Windows.Forms.ToolStripStatusLabel statusLabel_ComplatedCount;
+		public System.Windows.Forms.ToolStripMenuItem menuItem_Publishing;
 	}
 }

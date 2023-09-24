@@ -13,7 +13,8 @@ namespace Publisher
         [STAThread]
         static void Main()
         {
-            Settings.Load();
+			MessageQueue.Instance.Enqueue("설정을 불러옵니다.");
+			Settings.Load();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
