@@ -61,7 +61,7 @@
             this.프로그램ToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(657, 35);
+			this.menuStrip1.Size = new System.Drawing.Size(657, 36);
 			this.menuStrip1.TabIndex = 0;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -120,9 +120,9 @@
 			this.panel_Container.Controls.Add(this.progressBar2);
 			this.panel_Container.Controls.Add(this.progressBar1);
 			this.panel_Container.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel_Container.Location = new System.Drawing.Point(0, 35);
+			this.panel_Container.Location = new System.Drawing.Point(0, 36);
 			this.panel_Container.Name = "panel_Container";
-			this.panel_Container.Size = new System.Drawing.Size(657, 385);
+			this.panel_Container.Size = new System.Drawing.Size(657, 384);
 			this.panel_Container.TabIndex = 2;
 			// 
 			// menuItem_Publishing
@@ -206,7 +206,7 @@
 			this.richTextBox1.Location = new System.Drawing.Point(24, 177);
 			this.richTextBox1.Name = "richTextBox1";
 			this.richTextBox1.ReadOnly = true;
-			this.richTextBox1.Size = new System.Drawing.Size(606, 192);
+			this.richTextBox1.Size = new System.Drawing.Size(606, 191);
 			this.richTextBox1.TabIndex = 4;
 			this.richTextBox1.Text = "";
 			// 
