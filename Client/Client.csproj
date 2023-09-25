@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\SystemController.cs" />
     <Compile Include="Features\Logger\ILogger.cs" />
     <Compile Include="Features\Logger\Logger.cs" />
     <Compile Include="Features\Logger\LogInfo.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Forms\CMain.Designer.cs">
       <DependentUpon>CMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Networks\Network.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\CMain.resx">
@@ -117,6 +119,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\Shared.csproj">
+      <Project>{AF91E29C-9E22-4813-9EDE-A1D126F87EE0}</Project>
+      <Name>Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

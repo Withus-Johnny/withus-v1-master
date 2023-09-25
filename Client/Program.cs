@@ -1,5 +1,7 @@
-﻿using Client.Features.Logger;
+﻿using Client.Controllers;
+using Client.Features.Logger;
 using Client.Forms;
+using Shared.Networks;
 using System;
 using System.Windows.Forms;
 
@@ -16,11 +18,16 @@ namespace Client
         [STAThread]
         static void Main()
         {
-            InitializeLogger();            
+            Packet.IsServer = false;
+
+            InitializeLogger();
+            SystemController.Instance.InitializeNetwork();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(CMain = new CMain());
+
+            SystemController.Instance.Stop();
         }
 
         private static void InitializeLogger()

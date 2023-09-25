@@ -43,6 +43,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Functions\InIReader.cs" />
+    <Compile Include="Networks\ClientPackets.cs" />
+    <Compile Include="Networks\FixedSizedQueue.cs" />
+    <Compile Include="Networks\Packet.cs" />
+    <Compile Include="Networks\PacketEnums.cs" />
+    <Compile Include="Networks\ReasonEnums.cs" />
+    <Compile Include="Networks\ServerPackets.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
