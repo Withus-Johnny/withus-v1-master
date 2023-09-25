@@ -7,6 +7,8 @@ namespace Client
 {
     internal static class Program
     {
+        public static ILogger Logger { get; private set; }
+
         public static CMain CMain;
         /// <summary>
         /// 해당 애플리케이션의 주 진입점입니다.
@@ -14,11 +16,17 @@ namespace Client
         [STAThread]
         static void Main()
         {
-            Logger.Instance.Initialize();
+            InitializeLogger();            
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(CMain = new CMain());
+        }
+
+        private static void InitializeLogger()
+        {
+            Logger = new Logger();
+            Logger.Initialize();
         }
     }
 }
