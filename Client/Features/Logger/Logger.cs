@@ -81,6 +81,8 @@ namespace Client.Features.Logger
                                 break;
                             case LogType.Information:
                                 writer.WriteLine("타입 : 정보");
+                                writer.WriteLine($"클래스명 : {dqInfo.SourcePath}");
+                                writer.WriteLine($"함수명 : {dqInfo.MemberName}");
                                 break;
                             case LogType.Error:
                                 writer.WriteLine("타입 : 에러");
@@ -89,8 +91,9 @@ namespace Client.Features.Logger
                                 writer.WriteLine($"줄 : {dqInfo.SourceLine}");
                                 break;
                         }
-                        writer.WriteLine($"요약 : {dqInfo.Summary}");
-                        writer.WriteLine($"설명 : {dqInfo.Description}");
+
+                        writer.WriteLine($"요약 : {dqInfo.Summary}");                        
+                        writer.WriteLine($"설명(값) : {dqInfo.Description}");
                         writer.WriteLine(horizontalLine);
                     }
                 }
