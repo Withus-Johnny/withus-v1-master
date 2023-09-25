@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
+using System.Net;
 using System.Windows.Forms;
 
 namespace Publisher.Forms
@@ -63,9 +65,14 @@ namespace Publisher.Forms
 			};
 		}
 
-		private void textBox_TargetPath_TextChanged(object sender, System.EventArgs e)
+		private void textBox_TargetPath_TextChanged(object sender, EventArgs e)
 		{
 			if (!_IsLoaded) return;
+
+			if (textBox_TargetPath.Text.ToUpper() == @"C:\")
+			{
+				textBox_TargetPath.Text = @"C:\Debug\Client\";
+            }
 
 			treeView1.Nodes.Clear();
 			PopulateTreeView(textBox_TargetPath.Text, treeView1.Nodes);
@@ -95,5 +102,24 @@ namespace Publisher.Forms
 		{
 			this.Close();
 		}
-	}
+
+        private void textBox_TargetPath_Leave(object sender, EventArgs e)
+        {
+            if (!textBox_TargetPath.Text.EndsWith("\\"))
+			{
+                textBox_TargetPath.Text += "\\";
+            }
+        }
+
+        private void textBox_Host_Leave(object sender, EventArgs e)
+        {			
+			if (!textBox_Host.Text.ToUpper().Contains(@"FTP:\\"))
+			{
+				if (IPAddress.TryParse(textBox_Host.Text, out IPAddress convertedHost))
+				{
+					textBox_Host.Text = $@"ftp://{textBox_Host.Text}/";
+                }
+			}
+        }
+    }
 }
