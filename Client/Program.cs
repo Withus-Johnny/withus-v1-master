@@ -1,4 +1,5 @@
-﻿using Client.Forms;
+﻿using Client.Features.Logger;
+using Client.Forms;
 using System;
 using System.Windows.Forms;
 
@@ -13,6 +14,8 @@ namespace Client
         [STAThread]
         static void Main()
         {
+            Logger.Instance.Initialize();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(CMain = new CMain());

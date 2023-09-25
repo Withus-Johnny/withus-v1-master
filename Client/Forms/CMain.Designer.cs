@@ -38,6 +38,7 @@
             this.Name = "CMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CMain";
+            this.Load += new System.EventHandler(this.CMain_Load);
             this.ResumeLayout(false);
 
         }
