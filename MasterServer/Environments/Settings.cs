@@ -19,7 +19,13 @@ namespace MasterServer.Environments
 
         // 일반
         public static string VersionPath = Path.Combine(".", "Client.exe");
+
+#if DEBUG
         public static bool VersionCheck = false;
+#else
+        public static bool VersionCheck = true;
+#endif
+
         public static List<byte[]> VersionHashes;
 
         public static void LoadClientVersion()

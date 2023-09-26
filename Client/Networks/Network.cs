@@ -218,6 +218,8 @@ namespace Client.Networks
         }
         private static void SendData(IAsyncResult result)
         {
+            if (_client == null) return;
+
             if (_client.Client == null) return;
 
             try

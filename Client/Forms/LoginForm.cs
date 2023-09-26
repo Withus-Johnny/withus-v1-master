@@ -1,39 +1,15 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
+using WithusUI.Forms;
 
 namespace Client.Forms
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : WithusForm
     {
-        public bool UpdateShowInTaskbar
-        {
-            get => this.ShowInTaskbar;
-            set => this.BeginInvoke(new Action(() =>
-            {
-                this.ShowInTaskbar = value;
-            }));
-        }
-
-        public double UpdateOpacity
-        {
-            get => this.Opacity;
-            set => this.BeginInvoke(new Action(() =>
-            {
-                this.Opacity = value;
-            }));
-        }
-
-        public bool UpdateEnable
-        {
-            get => this.Enabled;
-            set => this.BeginInvoke(new Action(() =>
-            {
-                this.Enabled = value;
-            }));
-        }
         public LoginForm()
         {
             InitializeComponent();
+
+            this.Text = "위더스 - 로그인";
             this.StartPosition = FormStartPosition.CenterScreen;
         }
     }

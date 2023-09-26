@@ -106,9 +106,7 @@ namespace Client.Controllers
                     Network.Disconnect("클라이언트 버전이 불일치합니다.");
                     break;
                 case 1:
-                    Program.LoginForm.UpdateShowInTaskbar = true;
-                    Program.LoginForm.UpdateOpacity = 1;
-                    Program.LoginForm.UpdateEnable = true;
+                    Program.LoginForm.FormVisible = true;
                     break;
             }
         }

@@ -90,6 +90,9 @@
     <EmbeddedResource Include="Forms\CMain.resx">
       <DependentUpon>CMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -129,6 +132,10 @@
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{AF91E29C-9E22-4813-9EDE-A1D126F87EE0}</Project>
       <Name>Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WithusUI\WithusUI.csproj">
+      <Project>{e0c81495-e223-4513-82e1-0c78fcf173c8}</Project>
+      <Name>WithusUI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

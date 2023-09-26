@@ -46,11 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configs\Colors.cs" />
     <Compile Include="Forms\WithusForm.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\WithusForm.Designer.cs">
-      <DependentUpon>WithusForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

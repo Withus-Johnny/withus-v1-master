@@ -275,8 +275,13 @@ namespace MasterServer.Connections
                     data.AddRange(new S.ClientVersion { Result = 0 }.GetPacketBytes());
 
                     BeginSend(data);
-                    Console.WriteLine($"[{DateTime.Now:yy.MM.dd HH:mm:ss}] > [ DISCONNECTED(WRONG CLIENT VERSION) ] < [SESSION:{SessionID}] [IP:{IPAddress}]");
 
+                    Console.WriteLine($"[{DateTime.Now:yy.MM.dd HH:mm:ss}] > [ DISCONNECTED(WRONG CLIENT VERSION) ] < [SESSION:{SessionID}] [IP:{IPAddress}]");
+                    
+                    lock (Program.Envir.WithusClientsList)
+                    {
+                        Program.Envir.WithusClientsList.Remove(this);
+                    }
                     return;
                 }
             }
@@ -304,7 +309,7 @@ namespace MasterServer.Connections
                     Console.WriteLine($"[{DateTime.Now:yy.MM.dd HH:mm:ss}] > [ DISCONNECT(SHUTDOWN) ] < [SESSION:{SessionID}] [IP:{IPAddress}]");
                     break;
                 case DisconnectReason.TimeOut:
-                    Console.WriteLine($"[{DateTime.Now:yy.MM.dd HH:mm:ss}] > [ ISCONNECT(TIMEOUT) ] < [SESSION:{SessionID}] [IP:{IPAddress}]");
+                    Console.WriteLine($"[{DateTime.Now:yy.MM.dd HH:mm:ss}] > [ DISCONNECT(TIMEOUT) ] < [SESSION:{SessionID}] [IP:{IPAddress}]");
                     break;
                 case DisconnectReason.ClientExit:
                     Console.WriteLine($"[{DateTime.Now:yy.MM.dd HH:mm:ss}] > [ DISCONNECT(CLOSED) ] < [SESSION:{SessionID}] [IP:{IPAddress}]");

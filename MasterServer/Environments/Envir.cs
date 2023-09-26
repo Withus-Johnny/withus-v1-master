@@ -74,6 +74,7 @@ namespace MasterServer.Environments
                 lock (WithusClientsList)
                 {
                     WithusClientsList.Add(tempConnection);
+                    Console.WriteLine($"CONNECTED CLIENT COUNT : {WithusClientsList.Count}");
                 }
             }
             catch (Exception ex)
