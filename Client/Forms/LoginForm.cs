@@ -18,6 +18,7 @@ namespace Client.Forms
         {
             _stopwatch = Stopwatch.StartNew();
 
+            this.Icon = Properties.Resources.Icon_Withus;
             InitializeComponent();
 
             this.Text = "위더스 - 로그인";
