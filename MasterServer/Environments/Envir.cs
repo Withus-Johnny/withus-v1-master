@@ -2,7 +2,6 @@
 using System.Net.Sockets;
 using System.Net;
 using MasterServer.Connections;
-using System.Text;
 
 namespace MasterServer.Environments
 {

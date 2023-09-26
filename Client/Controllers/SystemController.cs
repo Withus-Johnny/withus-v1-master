@@ -5,7 +5,6 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Security.Cryptography;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using C = ClientPackets;
@@ -107,9 +106,9 @@ namespace Client.Controllers
                     Network.Disconnect("클라이언트 버전이 불일치합니다.");
                     break;
                 case 1:
-                    Program.CMain.UpdateShowInTaskbar = true;
-                    Program.CMain.UpdateOpacity = 1;
-                    Program.CMain.UpdateEnable = true;
+                    Program.LoginForm.UpdateShowInTaskbar = true;
+                    Program.LoginForm.UpdateOpacity = 1;
+                    Program.LoginForm.UpdateEnable = true;
                     break;
             }
         }
