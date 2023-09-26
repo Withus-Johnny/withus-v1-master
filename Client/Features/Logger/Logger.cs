@@ -11,9 +11,6 @@ namespace Client.Features.Logger
     {
         private Thread _loggerThread;
 
-        private static readonly Logger _instance = new Logger();
-        public static Logger Instance { get { return _instance; } }
-
         private ConcurrentQueue<LogInfo> LogMessage = new ConcurrentQueue<LogInfo>();
 
         public void Initialize()

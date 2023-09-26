@@ -1,4 +1,5 @@
 ﻿using Client.Controllers;
+using Client.Features.Logger;
 using Shared.Networks;
 using System;
 using System.Collections.Concurrent;
@@ -25,6 +26,7 @@ namespace Client.Networks
 
         public static void Connect()
         {
+            Program.Logger.Enqueue(LogType.System, "네트워크", "서버 연결 시도");
             try
             {
                 _client = new TcpClient { NoDelay = true };
@@ -129,6 +131,7 @@ namespace Client.Networks
 
             _receiveList = null;
 
+            Program.Logger.Enqueue(LogType.System, "네트워크", $"[연결 해제]\n{msg}");
             MessageBox.Show(msg, "시스템");
             Application.Exit();
         }

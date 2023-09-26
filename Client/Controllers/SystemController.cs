@@ -3,10 +3,7 @@ using Client.Networks;
 using Shared.Networks;
 using System;
 using System.Diagnostics;
-using System.IO;
-using System.Security.Cryptography;
 using System.Threading;
-using System.Windows.Forms;
 using C = ClientPackets;
 using S = ServerPackets;
 
@@ -27,12 +24,10 @@ namespace Client.Controllers
 
         public static double BytesSent, BytesReceived;
 
-        private ILogger _logger;
 
         public void InitializeNetwork()
         {
-            _logger = Program.Logger;
-
+            Program.Logger.Enqueue(LogType.System, "네트워크", "네트워크 초기화");
             networkThread = new Thread(new ThreadStart(Running));
             networkThread.IsBackground = true;
             networkThread.Start();
@@ -84,7 +79,7 @@ namespace Client.Controllers
             {
                 case (short)ServerPacketIds.Connected:
                     Network.Connected = true;
-                    SendClientVersion();
+                    Program.Logger.Enqueue(LogType.System, "네트워크", "서버 연결 됨");
                     break;
                 case (short)ServerPacketIds.KeepAlive:
                     KeepAlive((S.KeepAlive)p);
@@ -103,34 +98,13 @@ namespace Client.Controllers
             switch (p.Result)
             {
                 case 0:
+                    Program.Logger.Enqueue(LogType.System, "버전체크 실패", "클라이언트 버전이 불일치");
                     Network.Disconnect("클라이언트 버전이 불일치합니다.");
                     break;
                 case 1:
+                    Program.Logger.Enqueue(LogType.System, "버전체크 성공", "로그인폼 활성화");
                     Program.LoginForm.FormVisible = true;
                     break;
-            }
-        }
-
-        private void SendClientVersion()
-        {
-            _logger.Enqueue(LogType.System, "버전체크", "버전 체크를 시작 합니다.");
-            C.ClientVersion p = new C.ClientVersion();
-            try
-            {
-                byte[] sum;
-                using (MD5 md5 = MD5.Create())
-                using (FileStream stream = File.OpenRead(Application.ExecutablePath))
-                    sum = md5.ComputeHash(stream);
-
-                p.VersionHash = sum;
-                _logger.Enqueue(LogType.Information, "클라이언트 버전", string.Join(" ", p.VersionHash));
-
-                _logger.Enqueue(LogType.System, "버전체크", "버전을 전송합니다.");
-                Network.Enqueue(p);
-            }
-            catch (Exception ex)
-            {
-                _logger.Enqueue(LogType.Error, "버전 체크 오류 발생", ex.Message);
             }
         }
 
