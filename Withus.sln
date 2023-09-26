@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Publisher", "Publisher\Publ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{AF91E29C-9E22-4813-9EDE-A1D126F87EE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterServer", "MasterServer\MasterServer.csproj", "{07638F50-45AE-42B0-883C-263ADA0A95EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterServer", "MasterServer\MasterServer.csproj", "{07638F50-45AE-42B0-883C-263ADA0A95EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WithusUI", "WithusUI\WithusUI.csproj", "{E0C81495-E223-4513-82E1-0C78FCF173C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{07638F50-45AE-42B0-883C-263ADA0A95EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07638F50-45AE-42B0-883C-263ADA0A95EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07638F50-45AE-42B0-883C-263ADA0A95EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0C81495-E223-4513-82E1-0C78FCF173C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0C81495-E223-4513-82E1-0C78FCF173C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0C81495-E223-4513-82E1-0C78FCF173C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0C81495-E223-4513-82E1-0C78FCF173C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
