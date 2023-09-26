@@ -49,6 +49,9 @@ namespace MasterServer.Connections
         {
             SessionID = sessionID;
             IPAddress = client.Client.RemoteEndPoint.ToString().Split(':')[0];
+
+            Console.WriteLine($"[{DateTime.Now:yy.MM.dd HH:mm:ss}] > [ CONNECTED ] < [SESSION:{SessionID}] [IP:{IPAddress}]");
+
             _client = client;
             _client.NoDelay = true;
 
@@ -245,7 +248,7 @@ namespace MasterServer.Connections
 
         private void ClientKeepAlive(C.KeepAlive p)
         {
-            Console.WriteLine($"[ KEEPALIVE ] SESSION:{SessionID}] [IP:{IPAddress}]");
+            Console.WriteLine($"[{DateTime.Now:yy.MM.dd HH:mm:ss}] > [ KEEPALIVE ] < [SESSION:{SessionID}] [IP:{IPAddress}]");
             LastKeepAliveDateTime = DateTime.Now;
             Enqueue(new S.KeepAlive
             {
@@ -259,16 +262,16 @@ namespace MasterServer.Connections
             switch (reasonType)
             {
                 case DisconnectReason.ClientShutDown:
-                    Console.WriteLine($"[ DISCONNECT - SHUTDOWN ] -SESSION:{SessionID} -IP:{IPAddress}");
+                    Console.WriteLine($"[{DateTime.Now:yy.MM.dd HH:mm:ss}] > [ DISCONNECT(SHUTDOWN) ] < [SESSION:{SessionID}] [IP:{IPAddress}]");
                     break;
                 case DisconnectReason.TimeOut:
-                    Console.WriteLine($"[ DISCONNECT - TIMEOUT ] -SESSION:{SessionID} -IP:{IPAddress}");
+                    Console.WriteLine($"[{DateTime.Now:yy.MM.dd HH:mm:ss}] > [ ISCONNECT(TIMEOUT) ] < [SESSION:{SessionID}] [IP:{IPAddress}]");
                     break;
                 case DisconnectReason.ClientExit:
-                    Console.WriteLine($"[ DISCONNECT - USER CLOSE ] -SESSION:{SessionID} -IP:{IPAddress}");
+                    Console.WriteLine($"[{DateTime.Now:yy.MM.dd HH:mm:ss}] > [ DISCONNECT(CLOSED) ] < [SESSION:{SessionID}] [IP:{IPAddress}]");
                     break;
                 default:
-                    Console.WriteLine("[ DISCONNECT - DEFAULT ]");
+                    Console.WriteLine($"[{DateTime.Now:yy.MM.dd HH:mm:ss}] > [ DISCONNECT(DEFAULT) ] < [SESSION:{SessionID}] [IP:{IPAddress}]");
                     break;
             }
             Connected = false;

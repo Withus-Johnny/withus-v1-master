@@ -2,6 +2,7 @@
 using System.Net.Sockets;
 using System.Net;
 using MasterServer.Connections;
+using System.Text;
 
 namespace MasterServer.Environments
 {
@@ -73,7 +74,6 @@ namespace MasterServer.Environments
                 var tempConnection = new WithusClient(++_sessionID, tempTcpClient);
                 lock (WithusClientsList)
                 {
-                    Console.WriteLine($"[ CONNECTED ] SESSION:{tempConnection.SessionID}] [IP:{ipAddress}]");
                     WithusClientsList.Add(tempConnection);
                 }
             }
@@ -92,7 +92,22 @@ namespace MasterServer.Environments
 
         private void WorkLoop()
         {
-            Console.WriteLine("WORKLOOP START");
+            string title = @"
+.----------------------------------.
+|__        ___ _   _               |
+|\ \      / (_) |_| |__  _   _ ___ |
+| \ \ /\ / /| | __| '_ \| | | / __||
+|  \ V  V / | | |_| | | | |_| \__ \|
+|   \_/\_/  |_|\__|_| |_|\__,_|___/|
+'----------------------------------'
+";
+            var lines = title.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+            var longestLength = lines.Max(line => line.Length);
+            var leadingSpaces = new string(' ', (Console.WindowWidth - longestLength) / 2);
+            var centeredText = string.Join(Environment.NewLine,
+                lines.Select(line => leadingSpaces + line));
+
+            Console.WriteLine(centeredText);
 
             while (Running)
             {
