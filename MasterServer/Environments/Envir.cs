@@ -101,13 +101,7 @@ namespace MasterServer.Environments
 |   \_/\_/  |_|\__|_| |_|\__,_|___/|
 '----------------------------------'
 ";
-            var lines = title.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
-            var longestLength = lines.Max(line => line.Length);
-            var leadingSpaces = new string(' ', (Console.WindowWidth - longestLength) / 2);
-            var centeredText = string.Join(Environment.NewLine,
-                lines.Select(line => leadingSpaces + line));
-
-            Console.WriteLine(centeredText);
+            Console.WriteLine(title);
 
             while (Running)
             {

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Functions\Functions.cs" />
     <Compile Include="Functions\InIReader.cs" />
     <Compile Include="Networks\ClientPackets.cs" />
     <Compile Include="Networks\FixedSizedQueue.cs" />

@@ -1,4 +1,6 @@
-﻿namespace MasterServer.Environments
+﻿using System.Security.Cryptography;
+
+namespace MasterServer.Environments
 {
     public static class Settings
     {
@@ -14,5 +16,33 @@
                              MaxPacket = 50;
 
         public static string APIServerBaseAddress = "http://127.0.0.1:5000/api/v1/";
+
+        // 일반
+        public static string VersionPath = Path.Combine(".", "Client.exe");
+        public static bool VersionCheck = true;
+        public static List<byte[]> VersionHashes;
+
+        public static void LoadClientVersion()
+        {
+            try
+            {
+                VersionHashes = new List<byte[]>();
+
+                var paths = VersionPath.Split(',');
+
+                foreach (var path in paths)
+                {
+                    if (File.Exists(path))
+                        using (FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read))
+                        using (MD5 md5 = MD5.Create())
+                            VersionHashes.Add(md5.ComputeHash(stream));
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }

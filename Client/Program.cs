@@ -12,6 +12,7 @@ namespace Client
         public static ILogger Logger { get; private set; }
 
         public static CMain CMain;
+        
         /// <summary>
         /// 해당 애플리케이션의 주 진입점입니다.
         /// </summary>

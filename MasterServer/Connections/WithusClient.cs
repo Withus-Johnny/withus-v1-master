@@ -5,6 +5,8 @@ using Shared.Networks;
 using S = ServerPackets;
 using C = ClientPackets;
 using System.Net;
+using Shared.Functions;
+using System;
 
 namespace MasterServer.Connections
 {
@@ -243,7 +245,44 @@ namespace MasterServer.Connections
                 case (short)ClientPacketIds.KeepAlive:
                     ClientKeepAlive((C.KeepAlive)p);
                     break;
+                case (short)ClientPacketIds.ClientVersion:
+                    ClientVersionCheck((C.ClientVersion)p);
+                    break;
             }
+        }
+
+        private void ClientVersionCheck(C.ClientVersion p)
+        {
+            if (Settings.VersionCheck)
+            {
+                bool match = false;
+
+                foreach (var hash in Settings.VersionHashes)
+                {
+                    if (Functions.CompareBytes(hash, p.VersionHash))
+                    {
+                        match = true;
+                        break;
+                    }
+                }
+
+                if (!match)
+                {
+                    Disconnecting = true;
+
+                    List<byte> data = new List<byte>();
+
+                    data.AddRange(new S.ClientVersion { Result = 0 }.GetPacketBytes());
+
+                    BeginSend(data);
+                    Console.WriteLine($"[{DateTime.Now:yy.MM.dd HH:mm:ss}] > [ DISCONNECTED(WRONG CLIENT VERSION) ] < [SESSION:{SessionID}] [IP:{IPAddress}]");
+
+                    return;
+                }
+            }
+
+            Console.WriteLine($"[{DateTime.Now:yy.MM.dd HH:mm:ss}] > [ CLIENT VERSION MATCHED ] < [SESSION:{SessionID}] [IP:{IPAddress}]");
+            Enqueue(new S.ClientVersion { Result = 1 });
         }
 
         private void ClientKeepAlive(C.KeepAlive p)

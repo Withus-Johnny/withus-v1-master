@@ -8,6 +8,8 @@ namespace MasterServer
         public static Envir Envir { get; private set; }
         static void Main(string[] args)
         {
+            Settings.LoadClientVersion();
+
             Packet.IsServer = true;
             Envir = new Envir();
             Envir.Start();
