@@ -57,12 +57,37 @@ namespace WithusUI.Controls.Buttons
         }
 
         [Category("커스텀 속성")]
+        public Color DefaultBackGroundColor
+        {
+            get { return _backGroundColor; }
+            set
+            {
+                _backGroundColor = value;
+                this.BackColor = value;
+                this.Invalidate();
+            }
+        }
+
+        [Category("커스텀 속성")]
         public Color DefaultBorderColor
         {
             get { return _defaultBorderColor; }
             set
             {
                 _defaultBorderColor = value;
+                _borderColor = value;
+                this.Invalidate();
+            }
+        }
+
+        [Category("커스텀 속성")]
+        public Color DefaultFontForeColor
+        {
+            get { return _defaultForeColor; }
+            set
+            {
+                _defaultForeColor = value;
+                this.ForeColor = value;
                 this.Invalidate();
             }
         }
@@ -79,6 +104,39 @@ namespace WithusUI.Controls.Buttons
         }
 
         [Category("커스텀 속성")]
+        public Color HoverBackColor
+        {
+            get { return _hoverBackGroundColor; }
+            set
+            {
+                _hoverBackGroundColor = value;
+                this.Invalidate();
+            }
+        }
+
+        [Category("커스텀 속성")]
+        public Color HoverForeColor
+        {
+            get { return _hoverForeColor; }
+            set
+            {
+                _hoverForeColor = value;
+                this.Invalidate();
+            }
+        }
+
+        [Category("커스텀 속성")]
+        public Color ActiveBackColor
+        {
+            get { return _activeBackGroundColor; }
+            set
+            {
+                _activeBackGroundColor = value;
+                this.Invalidate();
+            }
+        }
+
+        [Category("커스텀 속성")]
         public Color ActiveBorderColor
         {
             get { return _activeBorderColor; }
@@ -89,19 +147,15 @@ namespace WithusUI.Controls.Buttons
             }
         }
 
-
         [Category("커스텀 속성")]
-        public Color BackgroundColor
+        public Color ActiveForeColor
         {
-            get { return this.BackColor; }
-            set { this.BackColor = value; }
-        }
-
-        [Category("커스텀 속성")]
-        public Color TextColor
-        {
-            get { return this.ForeColor; }
-            set { this.ForeColor = value; }
+            get { return _activeForeColor; }
+            set
+            {
+                _activeForeColor = value;
+                this.Invalidate();
+            }
         }
         #endregion
 
@@ -121,9 +175,8 @@ namespace WithusUI.Controls.Buttons
             this.Font = new Font(this.Font, FontStyle.Bold);
             this.Resize += new EventHandler(Button_Resize);
 
-            this.FlatAppearance.MouseOverBackColor = _hoverBackGroundColor;
-            this.FlatAppearance.MouseDownBackColor = _activeBackGroundColor;
             _borderColor = _defaultBorderColor;
+            this.Cursor = Cursors.Hand;
         }
 
         #region Functions
@@ -166,6 +219,8 @@ namespace WithusUI.Controls.Buttons
                         break;
                 }
 
+                this.FlatAppearance.MouseDownBackColor = _activeBackGroundColor;
+                this.FlatAppearance.MouseOverBackColor = _hoverBackGroundColor;
                 this.BackColor = _backColor;
                 this.ForeColor = _foreColor;
                 Invalidate();
@@ -248,7 +303,7 @@ namespace WithusUI.Controls.Buttons
             }
             else
             {
-                _borderColor = Colors.WButtonHoverBorderColor;
+                _borderColor = _hoverBorderColor;
                 SetButtonState(ButtonState.Hover);
             }
         }
@@ -260,16 +315,12 @@ namespace WithusUI.Controls.Buttons
             if (!ClientRectangle.Contains(e.Location))
                 return;
 
-            this.Font = new Font(this.Font.FontFamily, this.Font.Size + 1, this.Font.Style);
             SetButtonState(ButtonState.Pressed);
         }
 
         protected override void OnMouseUp(MouseEventArgs e)
         {
             base.OnMouseUp(e);
-
-            this.Font = new Font(this.Font.FontFamily, this.Font.Size + -1, this.Font.Style);
-            this.ForeColor = Color.WhiteSmoke;
             SetButtonState(ButtonState.Normal);
         }
 

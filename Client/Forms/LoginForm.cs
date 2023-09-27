@@ -80,6 +80,10 @@ namespace Client.Forms
         {
             SubscribeToDragEventsForPanels(this);
         }
+        private void wButton_EXIT_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
