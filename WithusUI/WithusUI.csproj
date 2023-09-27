@@ -43,6 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configs\Colors.cs" />
+    <Compile Include="Controls\Buttons\ButtonState.cs" />
+    <Compile Include="Controls\Buttons\WButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\WithusForm.cs">
       <SubType>Form</SubType>
     </Compile>
