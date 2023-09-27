@@ -135,7 +135,7 @@
       <Name>Shared</Name>
     </ProjectReference>
     <ProjectReference Include="..\WithusUI\WithusUI.csproj">
-      <Project>{e0c81495-e223-4513-82e1-0c78fcf173c8}</Project>
+      <Project>{4611f5d4-bedd-4b99-9597-8dd298dd40df}</Project>
       <Name>WithusUI</Name>
     </ProjectReference>
   </ItemGroup>

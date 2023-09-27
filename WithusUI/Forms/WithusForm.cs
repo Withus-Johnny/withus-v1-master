@@ -1,5 +1,5 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using WithusUI.Configs;
@@ -8,6 +8,15 @@ namespace WithusUI.Forms
 {
     public partial class WithusForm : Form
     {
+        private int _borderSize = 1;
+        private Color _formBackGroundColor = Colors.FormBackGroundColor;
+        private Color _formBorderColor = Colors.FormBorderColor;
+
+        private bool _visible = false;
+
+        private bool _isDragging = false;
+        private Point _dragStartPoint;
+
         #region 보더 스트럭쳐
         public new Rectangle Top()
         {
@@ -49,17 +58,6 @@ namespace WithusUI.Forms
             return new Rectangle(this.ClientSize.Width - _borderSize, this.ClientSize.Height - _borderSize, _borderSize, _borderSize);
         }
         #endregion
-
-        private int _borderSize = 1;
-        private Color _formBackGroundColor = Colors.FormBackGroundColor;
-        private Color _formBorderColor = Colors.FormBorderColor;
-
-        private bool _visible = false;
-
-        private bool _isDragging = false;
-        private Point _dragStartPoint;
-
-        private int LOOKUPCOUNT = 0;
 
         [Category("커스텀 속성")]
         public bool FormVisible
@@ -169,7 +167,6 @@ namespace WithusUI.Forms
                         control.MouseUp += Panel_MouseUp;
 
                         control.Tag = "Subscribed";
-                        LOOKUPCOUNT++;
 
                         if (control.HasChildren)
                         {
@@ -193,8 +190,6 @@ namespace WithusUI.Forms
                         control.MouseUp -= Panel_MouseUp;
 
                         control.Tag = null;
-                        LOOKUPCOUNT--;
-                        Console.WriteLine("남은 이벤트 : " + LOOKUPCOUNT);
 
                         if (control.HasChildren)
                         {
