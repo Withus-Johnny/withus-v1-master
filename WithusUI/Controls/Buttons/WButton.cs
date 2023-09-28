@@ -343,7 +343,6 @@ namespace WithusUI.Controls.Buttons
         protected override void OnGotFocus(EventArgs e)
         {
             base.OnGotFocus(e);
-
             Invalidate();
         }
 
@@ -357,6 +356,14 @@ namespace WithusUI.Controls.Buttons
                 SetButtonState(ButtonState.Normal);
             else
                 SetButtonState(ButtonState.Hover);
+        }
+
+        protected override bool ShowFocusCues
+        {
+            get
+            {
+                return false;
+            }
         }
         #endregion
     }
