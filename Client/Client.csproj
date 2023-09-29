@@ -142,5 +142,8 @@
   <ItemGroup>
     <None Include="Resources\Icon_Withus.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Brand_Withus.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
