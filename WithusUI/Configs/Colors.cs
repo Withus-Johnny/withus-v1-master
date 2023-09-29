@@ -58,5 +58,30 @@ namespace WithusUI.Configs
         {
             get { return Color.FromArgb(201, 209, 217); }
         }
-    }
+
+		public static Color WTextBoxBackGroundColor
+		{
+			get { return Color.FromArgb(31, 35, 44); }
+		}
+
+		public static Color WTextBoxBorderColor
+		{
+			get { return Color.FromArgb(78, 90, 117); }
+		}
+
+		public static Color WTextBoxFocusBorderColor
+		{
+			get { return Color.FromArgb(20, 142, 255); }
+		}
+
+		public static Color WTextBoxInvalidBorderColor
+		{
+			get { return Color.FromArgb(20, 142, 255); }
+		}
+
+		public static Color WTextBoxForeColor
+		{
+			get { return Color.FromArgb(136, 136, 139); }
+		}
+	}
 }

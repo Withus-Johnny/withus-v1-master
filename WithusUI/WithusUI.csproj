@@ -47,11 +47,22 @@
     <Compile Include="Controls\Buttons\WButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\TextBoxs\WTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TextBoxs\WTextBox.Designer.cs">
+      <DependentUpon>WTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WithusForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\TextBoxs\WTextBox.resx">
+      <DependentUpon>WTextBox.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
