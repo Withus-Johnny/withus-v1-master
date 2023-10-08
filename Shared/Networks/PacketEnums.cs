@@ -5,13 +5,15 @@
         Connected,
         Disconnect,
         ClientVersion,
-        KeepAlive
+        KeepAlive,
+        SignUpCheckResult
     }
 
     public enum ClientPacketIds : short
     {
         ClientVersion,
         Disconnect,
-        KeepAlive
+        KeepAlive,
+        SignUpCheck
     }
 }

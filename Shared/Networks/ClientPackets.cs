@@ -53,4 +53,18 @@ namespace ClientPackets
             writer.Write(Time);
         }
     }
+
+    public sealed class SignUpCheck : Packet
+    {
+        public override short Index
+        {
+            get { return (short)ClientPacketIds.SignUpCheck; }
+        }
+        protected override void ReadPacket(BinaryReader reader)
+        {
+        }
+        protected override void WritePacket(BinaryWriter writer)
+        {
+        }
+    }
 }

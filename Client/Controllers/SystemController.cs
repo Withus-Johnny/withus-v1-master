@@ -1,9 +1,12 @@
 ﻿using Client.Features.Logger;
+using Client.Forms;
 using Client.Networks;
+using ServerPackets;
 using Shared.Networks;
 using System;
 using System.Diagnostics;
 using System.Threading;
+using System.Windows.Forms;
 using C = ClientPackets;
 using S = ServerPackets;
 
@@ -87,10 +90,36 @@ namespace Client.Controllers
                 case (short)ServerPacketIds.ClientVersion:
                     ClientVersion((S.ClientVersion)p);
                     break;
+                case (short)ServerPacketIds.SignUpCheckResult:
+                    SignUpCheckResult((S.SignUpCheckResult)p);
+                    break;
                 default:
                     Console.WriteLine($"미개발 : {p.Index}");
                     break;
             }
+        }
+
+        private void SignUpCheckResult(S.SignUpCheckResult p)
+        {
+            Program.LoginForm.BeginInvoke(new Action(() =>
+            {
+                if (!p.Result)
+                {
+                    MessageBox.Show(Program.LoginForm, "지금은 회원가입을 진행 할 수 없습니다.", "시스템");
+                }
+                else
+                {
+                    if (Program.RegisterForm != null)
+                    {
+                        Console.WriteLine("회원가입 폼이 아직 닫히지 않았음");
+                        return;
+                    }
+
+                    Program.RegisterForm = new RegisterForm();
+                    Program.RegisterForm.FormVisible = true;
+                    Program.RegisterForm.ShowDialog(Program.LoginForm);
+                }
+            }));
         }
 
         private void ClientVersion(S.ClientVersion p)

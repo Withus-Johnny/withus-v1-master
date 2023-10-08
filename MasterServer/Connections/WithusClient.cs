@@ -248,7 +248,16 @@ namespace MasterServer.Connections
                 case (short)ClientPacketIds.ClientVersion:
                     ClientVersionCheck((C.ClientVersion)p);
                     break;
+                case (short)ClientPacketIds.SignUpCheck:
+                    SignUpCheck((C.SignUpCheck)p);
+                    break;
             }
+        }
+
+        private void SignUpCheck(C.SignUpCheck p)
+        {
+            Console.WriteLine($"[{DateTime.Now:yy.MM.dd HH:mm:ss}] > [ SIGNUP CHECK : {Settings.AllowSignUp.ToString().ToUpper()}] < [SESSION:{SessionID}] [IP:{IPAddress}]");
+            Enqueue(new S.SignUpCheckResult { Result = Settings.AllowSignUp });
         }
 
         private void ClientVersionCheck(C.ClientVersion p)
@@ -277,7 +286,7 @@ namespace MasterServer.Connections
                     BeginSend(data);
 
                     Console.WriteLine($"[{DateTime.Now:yy.MM.dd HH:mm:ss}] > [ DISCONNECTED(WRONG CLIENT VERSION) ] < [SESSION:{SessionID}] [IP:{IPAddress}]");
-                    
+
                     lock (Program.Envir.WithusClientsList)
                     {
                         Program.Envir.WithusClientsList.Remove(this);

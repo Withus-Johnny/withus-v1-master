@@ -12,6 +12,7 @@ namespace Client
         public static ILogger Logger { get; private set; }
 
         public static LoginForm LoginForm;
+        public static RegisterForm RegisterForm;
 
         /// <summary>
         /// 해당 애플리케이션의 주 진입점입니다.
@@ -20,10 +21,10 @@ namespace Client
         static void Main()
         {
             Packet.IsServer = false;
-
+            
             Logger = new Logger();
             Logger.Initialize();
-
+            
             SystemController.Instance.InitializeNetwork();
 
             Application.EnableVisualStyles();

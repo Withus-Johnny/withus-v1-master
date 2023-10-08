@@ -88,7 +88,9 @@ namespace Shared.Networks
                 case (short)ClientPacketIds.Disconnect:
                     return new C.Disconnect();
                 case (short)ClientPacketIds.KeepAlive:
-                    return new C.KeepAlive();                
+                    return new C.KeepAlive();
+                case (short)ClientPacketIds.SignUpCheck:
+                    return new C.SignUpCheck();
                 default:
                     return null;
             }
@@ -106,6 +108,8 @@ namespace Shared.Networks
                     return new S.Disconnect();
                 case (short)ServerPacketIds.KeepAlive:
                     return new S.KeepAlive();
+                case (short)ServerPacketIds.SignUpCheckResult:
+                    return new S.SignUpCheckResult();
                 default:
                     return null;
             }

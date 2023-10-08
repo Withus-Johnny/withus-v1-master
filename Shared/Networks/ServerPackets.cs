@@ -81,4 +81,24 @@ namespace ServerPackets
             writer.Write(Reason);
         }
     }
+
+    public sealed class SignUpCheckResult : Packet
+    {
+        public override short Index
+        {
+            get { return (short)ServerPacketIds.SignUpCheckResult; }
+        }
+
+        public bool Result;
+
+        protected override void ReadPacket(BinaryReader reader)
+        {
+            Result = reader.ReadBoolean();
+        }
+
+        protected override void WritePacket(BinaryWriter writer)
+        {
+            writer.Write(Result);
+        }
+    }
 }

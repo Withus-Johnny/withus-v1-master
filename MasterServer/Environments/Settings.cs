@@ -28,6 +28,8 @@ namespace MasterServer.Environments
 
         public static List<byte[]> VersionHashes;
 
+        public static bool AllowSignUp = true;
+
         public static void LoadClientVersion()
         {
             try

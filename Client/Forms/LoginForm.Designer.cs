@@ -199,6 +199,7 @@
             this.wLinkLabel_Register.Size = new System.Drawing.Size(85, 12);
             this.wLinkLabel_Register.TabIndex = 7;
             this.wLinkLabel_Register.Text = "무료 회원 가입";
+            this.wLinkLabel_Register.Click += new System.EventHandler(this.wLinkLabel_Register_Click);
             // 
             // wLinkLabel_Problem
             // 
