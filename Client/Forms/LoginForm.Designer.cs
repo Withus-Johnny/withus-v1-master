@@ -38,12 +38,16 @@
             this.wButton_Login = new WithusUI.Controls.Buttons.WButton();
             this.panel_Caption = new System.Windows.Forms.Panel();
             this.InterfaceTimer = new System.Windows.Forms.Timer(this.components);
+            this.wLinkLabel_Register = new WithusUI.Controls.Labels.WLinkLabel();
+            this.wLinkLabel_Problem = new WithusUI.Controls.Labels.WLinkLabel();
             this.panel_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_Container
             // 
+            this.panel_Container.Controls.Add(this.wLinkLabel_Problem);
+            this.panel_Container.Controls.Add(this.wLinkLabel_Register);
             this.panel_Container.Controls.Add(this.pictureBox1);
             this.panel_Container.Controls.Add(this.wTextBox1);
             this.panel_Container.Controls.Add(this.wTextBox2);
@@ -53,7 +57,7 @@
             this.panel_Container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Container.Location = new System.Drawing.Point(5, 5);
             this.panel_Container.Name = "panel_Container";
-            this.panel_Container.Size = new System.Drawing.Size(337, 601);
+            this.panel_Container.Size = new System.Drawing.Size(337, 644);
             this.panel_Container.TabIndex = 0;
             // 
             // pictureBox1
@@ -78,7 +82,7 @@
             this.wTextBox1.BorderSize = 1;
             this.wTextBox1.Font = new System.Drawing.Font("굴림", 11F);
             this.wTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(139)))));
-            this.wTextBox1.Location = new System.Drawing.Point(12, 259);
+            this.wTextBox1.Location = new System.Drawing.Point(12, 290);
             this.wTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.wTextBox1.Multiline = false;
             this.wTextBox1.Name = "wTextBox1";
@@ -100,7 +104,7 @@
             this.wTextBox2.BorderSize = 1;
             this.wTextBox2.Font = new System.Drawing.Font("굴림", 11F);
             this.wTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(139)))));
-            this.wTextBox2.Location = new System.Drawing.Point(12, 305);
+            this.wTextBox2.Location = new System.Drawing.Point(12, 336);
             this.wTextBox2.Margin = new System.Windows.Forms.Padding(2);
             this.wTextBox2.Multiline = false;
             this.wTextBox2.Name = "wTextBox2";
@@ -132,7 +136,7 @@
             this.wButton_EXIT.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(148)))), ((int)(((byte)(158)))));
             this.wButton_EXIT.HoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(209)))), ((int)(((byte)(217)))));
             this.wButton_EXIT.IsShowFocusCues = false;
-            this.wButton_EXIT.Location = new System.Drawing.Point(12, 549);
+            this.wButton_EXIT.Location = new System.Drawing.Point(12, 589);
             this.wButton_EXIT.Name = "wButton_EXIT";
             this.wButton_EXIT.Size = new System.Drawing.Size(311, 32);
             this.wButton_EXIT.TabIndex = 5;
@@ -163,7 +167,7 @@
             this.wButton_Login.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.wButton_Login.HoverForeColor = System.Drawing.Color.White;
             this.wButton_Login.IsShowFocusCues = false;
-            this.wButton_Login.Location = new System.Drawing.Point(12, 386);
+            this.wButton_Login.Location = new System.Drawing.Point(12, 437);
             this.wButton_Login.Name = "wButton_Login";
             this.wButton_Login.Size = new System.Drawing.Size(311, 35);
             this.wButton_Login.TabIndex = 2;
@@ -185,15 +189,38 @@
             this.InterfaceTimer.Interval = 1;
             this.InterfaceTimer.Tick += new System.EventHandler(this.InterfaceTimer_Tick);
             // 
+            // wLinkLabel_Register
+            // 
+            this.wLinkLabel_Register.AutoSize = true;
+            this.wLinkLabel_Register.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.wLinkLabel_Register.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(142)))), ((int)(((byte)(255)))));
+            this.wLinkLabel_Register.Location = new System.Drawing.Point(238, 407);
+            this.wLinkLabel_Register.Name = "wLinkLabel_Register";
+            this.wLinkLabel_Register.Size = new System.Drawing.Size(85, 12);
+            this.wLinkLabel_Register.TabIndex = 7;
+            this.wLinkLabel_Register.Text = "무료 회원 가입";
+            // 
+            // wLinkLabel_Problem
+            // 
+            this.wLinkLabel_Problem.AutoSize = true;
+            this.wLinkLabel_Problem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.wLinkLabel_Problem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(142)))), ((int)(((byte)(255)))));
+            this.wLinkLabel_Problem.Location = new System.Drawing.Point(226, 382);
+            this.wLinkLabel_Problem.Name = "wLinkLabel_Problem";
+            this.wLinkLabel_Problem.Size = new System.Drawing.Size(97, 12);
+            this.wLinkLabel_Problem.TabIndex = 8;
+            this.wLinkLabel_Problem.Text = "로그인 문제 해결";
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(347, 611);
+            this.ClientSize = new System.Drawing.Size(347, 654);
             this.Controls.Add(this.panel_Container);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
             this.panel_Container.ResumeLayout(false);
+            this.panel_Container.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -209,5 +236,7 @@
 		private WithusUI.Controls.TextBoxs.WTextBox wTextBox1;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Panel panel_Caption;
-	}
+        private WithusUI.Controls.Labels.WLinkLabel wLinkLabel_Register;
+        private WithusUI.Controls.Labels.WLinkLabel wLinkLabel_Problem;
+    }
 }

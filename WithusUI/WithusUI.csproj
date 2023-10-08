@@ -47,6 +47,9 @@
     <Compile Include="Controls\Buttons\WButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\Labels\WLinkLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\TextBoxs\WTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>

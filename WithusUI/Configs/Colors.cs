@@ -83,5 +83,22 @@ namespace WithusUI.Configs
 		{
 			get { return Color.FromArgb(136, 136, 139); }
 		}
-	}
+
+        #region WLinkLabel
+        public static Color WLinkLabelForeColor
+        {
+            get { return Color.FromArgb(21, 142, 255); }
+        }
+
+        public static Color WLinkLabelHoverForeColor
+        {
+            get { return Color.FromArgb(71, 166, 255); }
+        }
+
+        public static Color WLinkLabelActiveColor
+        {
+            get { return Color.FromArgb(11, 116, 224); }
+        }
+        #endregion
+    }
 }
