@@ -33,6 +33,8 @@ namespace WithusUI.Controls.Buttons
         private Color _borderColor;
         private Color _foreColor;
 
+        private bool _showFocusCues = false;
+
         #region Properties
         [Category("커스텀 속성")]
         public int BorderSize
@@ -157,6 +159,19 @@ namespace WithusUI.Controls.Buttons
                 this.Invalidate();
             }
         }
+
+        [Category("커스텀 속성")]
+        public bool IsShowFocusCues
+        {
+            get { return _showFocusCues; }
+            set
+            {
+                _showFocusCues = value;
+                this.Invalidate();
+            }
+        }
+
+
         #endregion
 
         public WButton()
@@ -362,7 +377,7 @@ namespace WithusUI.Controls.Buttons
         {
             get
             {
-                return false;
+                return _showFocusCues;
             }
         }
         #endregion
