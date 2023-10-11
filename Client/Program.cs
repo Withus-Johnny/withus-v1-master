@@ -21,10 +21,10 @@ namespace Client
         static void Main()
         {
             Packet.IsServer = false;
-            
+
             Logger = new Logger();
             Logger.Initialize();
-            
+
             SystemController.Instance.InitializeNetwork();
 
             Application.EnableVisualStyles();

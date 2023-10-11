@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panel_Container = new System.Windows.Forms.Panel();
+            this.wLinkLabel_Problem = new WithusUI.Controls.Labels.WLinkLabel();
+            this.wLinkLabel_Register = new WithusUI.Controls.Labels.WLinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.wTextBox1 = new WithusUI.Controls.TextBoxs.WTextBox();
             this.wTextBox2 = new WithusUI.Controls.TextBoxs.WTextBox();
@@ -38,8 +40,6 @@
             this.wButton_Login = new WithusUI.Controls.Buttons.WButton();
             this.panel_Caption = new System.Windows.Forms.Panel();
             this.InterfaceTimer = new System.Windows.Forms.Timer(this.components);
-            this.wLinkLabel_Register = new WithusUI.Controls.Labels.WLinkLabel();
-            this.wLinkLabel_Problem = new WithusUI.Controls.Labels.WLinkLabel();
             this.panel_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +59,29 @@
             this.panel_Container.Name = "panel_Container";
             this.panel_Container.Size = new System.Drawing.Size(337, 644);
             this.panel_Container.TabIndex = 0;
+            // 
+            // wLinkLabel_Problem
+            // 
+            this.wLinkLabel_Problem.AutoSize = true;
+            this.wLinkLabel_Problem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.wLinkLabel_Problem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(142)))), ((int)(((byte)(255)))));
+            this.wLinkLabel_Problem.Location = new System.Drawing.Point(226, 382);
+            this.wLinkLabel_Problem.Name = "wLinkLabel_Problem";
+            this.wLinkLabel_Problem.Size = new System.Drawing.Size(97, 12);
+            this.wLinkLabel_Problem.TabIndex = 8;
+            this.wLinkLabel_Problem.Text = "로그인 문제 해결";
+            // 
+            // wLinkLabel_Register
+            // 
+            this.wLinkLabel_Register.AutoSize = true;
+            this.wLinkLabel_Register.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.wLinkLabel_Register.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(142)))), ((int)(((byte)(255)))));
+            this.wLinkLabel_Register.Location = new System.Drawing.Point(238, 407);
+            this.wLinkLabel_Register.Name = "wLinkLabel_Register";
+            this.wLinkLabel_Register.Size = new System.Drawing.Size(85, 12);
+            this.wLinkLabel_Register.TabIndex = 7;
+            this.wLinkLabel_Register.Text = "무료 회원 가입";
+            this.wLinkLabel_Register.Click += new System.EventHandler(this.wLinkLabel_Register_Click);
             // 
             // pictureBox1
             // 
@@ -122,7 +145,7 @@
             this.wButton_EXIT.ActiveBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(118)))), ((int)(((byte)(129)))));
             this.wButton_EXIT.ActiveForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(209)))), ((int)(((byte)(217)))));
             this.wButton_EXIT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
-            this.wButton_EXIT.BorderRadius = 5;
+            this.wButton_EXIT.BorderRadius = 6;
             this.wButton_EXIT.BorderSize = 0;
             this.wButton_EXIT.Cursor = System.Windows.Forms.Cursors.Hand;
             this.wButton_EXIT.DefaultBackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(38)))), ((int)(((byte)(45)))));
@@ -188,29 +211,6 @@
             this.InterfaceTimer.Enabled = true;
             this.InterfaceTimer.Interval = 1;
             this.InterfaceTimer.Tick += new System.EventHandler(this.InterfaceTimer_Tick);
-            // 
-            // wLinkLabel_Register
-            // 
-            this.wLinkLabel_Register.AutoSize = true;
-            this.wLinkLabel_Register.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.wLinkLabel_Register.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(142)))), ((int)(((byte)(255)))));
-            this.wLinkLabel_Register.Location = new System.Drawing.Point(238, 407);
-            this.wLinkLabel_Register.Name = "wLinkLabel_Register";
-            this.wLinkLabel_Register.Size = new System.Drawing.Size(85, 12);
-            this.wLinkLabel_Register.TabIndex = 7;
-            this.wLinkLabel_Register.Text = "무료 회원 가입";
-            this.wLinkLabel_Register.Click += new System.EventHandler(this.wLinkLabel_Register_Click);
-            // 
-            // wLinkLabel_Problem
-            // 
-            this.wLinkLabel_Problem.AutoSize = true;
-            this.wLinkLabel_Problem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.wLinkLabel_Problem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(142)))), ((int)(((byte)(255)))));
-            this.wLinkLabel_Problem.Location = new System.Drawing.Point(226, 382);
-            this.wLinkLabel_Problem.Name = "wLinkLabel_Problem";
-            this.wLinkLabel_Problem.Size = new System.Drawing.Size(97, 12);
-            this.wLinkLabel_Problem.TabIndex = 8;
-            this.wLinkLabel_Problem.Text = "로그인 문제 해결";
             // 
             // LoginForm
             // 

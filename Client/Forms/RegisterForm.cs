@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using WithusUI.Forms;
 
@@ -16,6 +10,7 @@ namespace Client.Forms
         public RegisterForm()
         {
             InitializeComponent();
+            this.ShowInTaskbar = false;
         }
 
         private void RegisterForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -23,8 +18,12 @@ namespace Client.Forms
             Program.RegisterForm = null;
         }
 
-        private void wButton1_Click(object sender, EventArgs e)
+        private void wButton_Close_Click(object sender, EventArgs e)
         {
+            Program.LoginForm.BeginInvoke(new Action(() =>
+            {
+                Program.LoginForm.Opacity = 1;
+            }));
             this.Close();
         }
     }

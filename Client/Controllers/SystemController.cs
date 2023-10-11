@@ -5,6 +5,7 @@ using ServerPackets;
 using Shared.Networks;
 using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 using C = ClientPackets;
@@ -115,6 +116,11 @@ namespace Client.Controllers
                         return;
                     }
 
+                    Program.LoginForm.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - Program.LoginForm.Width) / 2,
+                          (Screen.PrimaryScreen.WorkingArea.Height - Program.LoginForm.Height) / 2);
+
+                    Program.LoginForm.Opacity = 0.7;
+                    
                     Program.RegisterForm = new RegisterForm();
                     Program.RegisterForm.FormVisible = true;
                     Program.RegisterForm.ShowDialog(Program.LoginForm);

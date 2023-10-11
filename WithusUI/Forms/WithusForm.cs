@@ -70,7 +70,7 @@ namespace WithusUI.Forms
                     this.BeginInvoke(new Action(() =>
                     {
                         _visible = value;
-                        this.ShowInTaskbar = value;
+                        //this.ShowInTaskbar = value;
                         this.Enabled = value;
                         if (value)
                             this.Opacity = 1;
@@ -82,7 +82,7 @@ namespace WithusUI.Forms
                 else
                 {
                     _visible = value;
-                    this.ShowInTaskbar = value;
+                    //this.ShowInTaskbar = value;
                     this.Enabled = value;
                     if (value)
                         this.Opacity = 1;
