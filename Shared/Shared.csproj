@@ -45,6 +45,7 @@
     <Compile Include="Functions\Functions.cs" />
     <Compile Include="Functions\InIReader.cs" />
     <Compile Include="Helpers\EmailValidator.cs" />
+    <Compile Include="Helpers\PasswordHasher.cs" />
     <Compile Include="Networks\ClientPackets.cs" />
     <Compile Include="Networks\FixedSizedQueue.cs" />
     <Compile Include="Networks\Packet.cs" />

@@ -84,6 +84,7 @@ namespace Client.Forms
 
             this.Enabled = false;
 
+            string hashedPassword = PasswordHasher.HashPassword(wTextBox_InputPassword.Texts);
         }
 
         private void wTextBox_InputUserPhone_TextChangedEvent(object sender, EventArgs e)
