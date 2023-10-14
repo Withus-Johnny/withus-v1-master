@@ -67,4 +67,32 @@ namespace ClientPackets
         {
         }
     }
+
+    public sealed class SignUp : Packet
+    {
+        public override short Index
+        {
+            get { return (short)ClientPacketIds.SignUp; }
+        }
+
+        public string UserEmail;
+        public string HashedPassword;
+        public string UserName;
+        public string UserPhone;
+
+        protected override void ReadPacket(BinaryReader reader)
+        {
+            UserEmail = reader.ReadString();
+            HashedPassword = reader.ReadString();
+            UserName = reader.ReadString();
+            UserPhone = reader.ReadString();
+        }
+        protected override void WritePacket(BinaryWriter writer)
+        {
+            writer.Write(UserEmail);
+            writer.Write(HashedPassword);
+            writer.Write(UserName);
+            writer.Write(UserPhone);
+        }
+    }
 }

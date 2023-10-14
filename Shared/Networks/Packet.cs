@@ -91,6 +91,8 @@ namespace Shared.Networks
                     return new C.KeepAlive();
                 case (short)ClientPacketIds.SignUpCheck:
                     return new C.SignUpCheck();
+                case (short)ClientPacketIds.SignUp:
+                    return new C.SignUp();
                 default:
                     return null;
             }

@@ -6,6 +6,7 @@
         Disconnect,
         ClientVersion,
         KeepAlive,
+        // 회원가입 가입 여부 결과
         SignUpCheckResult
     }
 
@@ -14,6 +15,8 @@
         ClientVersion,
         Disconnect,
         KeepAlive,
-        SignUpCheck
+        // 회원가입 가입 여부
+        SignUpCheck,
+        SignUp
     }
 }

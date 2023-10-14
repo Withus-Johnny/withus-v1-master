@@ -1,8 +1,12 @@
 ﻿using Client.Features.Logger;
+using Client.Networks;
+using ClientPackets;
+using Newtonsoft.Json;
 using Shared.Helpers;
 using System;
 using System.Windows.Forms;
 using WithusUI.Forms;
+using C = ClientPackets;
 
 namespace Client.Forms
 {
@@ -84,7 +88,18 @@ namespace Client.Forms
 
             this.Enabled = false;
 
-            string hashedPassword = PasswordHasher.HashPassword(wTextBox_InputPassword.Texts);
+            SignUp signUpPacketStruct = new SignUp
+            {
+                UserEmail = wTextBox_InputEmail.Texts,
+                HashedPassword = PasswordHasher.HashPassword(wTextBox_InputPassword.Texts),
+                UserName = wTextBox_InputUserName.Texts,
+                UserPhone = wTextBox_InputUserPhone.Texts
+            };
+
+            Program.Logger.Enqueue(LogType.Information, "회원가입 요청",
+                                   JsonConvert.SerializeObject(signUpPacketStruct, Formatting.Indented));
+
+            Network.Enqueue(signUpPacketStruct);
         }
 
         private void wTextBox_InputUserPhone_TextChangedEvent(object sender, EventArgs e)

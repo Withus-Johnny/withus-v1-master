@@ -251,7 +251,15 @@ namespace MasterServer.Connections
                 case (short)ClientPacketIds.SignUpCheck:
                     SignUpCheck((C.SignUpCheck)p);
                     break;
+                case (short)ClientPacketIds.SignUp:
+                    SignUp((C.SignUp)p);
+                    break;
             }
+        }
+
+        private void SignUp(C.SignUp p)
+        {
+            Console.WriteLine($"[{DateTime.Now:yy.MM.dd HH:mm:ss}] > [ SIGNUP ] < [SESSION:{SessionID}] [IP:{IPAddress}]");
         }
 
         private void SignUpCheck(C.SignUpCheck p)
