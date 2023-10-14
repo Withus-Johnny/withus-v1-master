@@ -106,21 +106,24 @@ namespace Client.Controllers
             {
                 if (!p.Result)
                 {
+                    Program.Logger.Enqueue(LogType.System, "회원가입 ", "회원가입 거부 상태");
                     MessageBox.Show(Program.LoginForm, "지금은 회원가입을 진행 할 수 없습니다.", "시스템");
                 }
                 else
                 {
                     if (Program.RegisterForm != null)
                     {
-                        Console.WriteLine("회원가입 폼이 아직 닫히지 않았음");
+                        Program.Logger.Enqueue(LogType.Error, "회원가입 ", "이미 회원가입 폼이 열려있음");
                         return;
                     }
+
+                    Program.Logger.Enqueue(LogType.System, "회원가입 ", "회원가입 폼을 초기화 합니다.");
 
                     Program.LoginForm.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - Program.LoginForm.Width) / 2,
                           (Screen.PrimaryScreen.WorkingArea.Height - Program.LoginForm.Height) / 2);
 
                     Program.LoginForm.Opacity = 0.7;
-                    
+
                     Program.RegisterForm = new RegisterForm();
                     Program.RegisterForm.FormVisible = true;
                     Program.RegisterForm.ShowDialog(Program.LoginForm);

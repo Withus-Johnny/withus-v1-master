@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.wButton_Close = new WithusUI.Controls.Buttons.WButton();
-            this.wButton_Login = new WithusUI.Controls.Buttons.WButton();
+            this.wButton_Submit = new WithusUI.Controls.Buttons.WButton();
             this.panel_Container = new System.Windows.Forms.Panel();
             this.panel_Input = new System.Windows.Forms.Panel();
-            this.wTextBox2 = new WithusUI.Controls.TextBoxs.WTextBox();
+            this.wTextBox_InputUserPhone = new WithusUI.Controls.TextBoxs.WTextBox();
             this.wTextBox_InputEmail = new WithusUI.Controls.TextBoxs.WTextBox();
             this.wTextBox_ConfirmPassword = new WithusUI.Controls.TextBoxs.WTextBox();
-            this.wTextBox1 = new WithusUI.Controls.TextBoxs.WTextBox();
+            this.wTextBox_InputUserName = new WithusUI.Controls.TextBoxs.WTextBox();
             this.wTextBox_InputPassword = new WithusUI.Controls.TextBoxs.WTextBox();
             this.panel_Bottom = new System.Windows.Forms.Panel();
             this.panel_Container.SuspendLayout();
@@ -71,35 +71,35 @@
             this.wButton_Close.UseVisualStyleBackColor = false;
             this.wButton_Close.Click += new System.EventHandler(this.wButton_Close_Click);
             // 
-            // wButton_Login
+            // wButton_Submit
             // 
-            this.wButton_Login.ActiveBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(93)))), ((int)(((byte)(137)))));
-            this.wButton_Login.ActiveBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(93)))), ((int)(((byte)(137)))));
-            this.wButton_Login.ActiveForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.wButton_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(95)))), ((int)(((byte)(139)))));
-            this.wButton_Login.BorderRadius = 6;
-            this.wButton_Login.BorderSize = 2;
-            this.wButton_Login.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.wButton_Login.DefaultBackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(95)))), ((int)(((byte)(139)))));
-            this.wButton_Login.DefaultBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(95)))), ((int)(((byte)(139)))));
-            this.wButton_Login.DefaultFontForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.wButton_Login.Enabled = false;
-            this.wButton_Login.FlatAppearance.BorderSize = 0;
-            this.wButton_Login.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(46)))), ((int)(((byte)(51)))));
-            this.wButton_Login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(54)))), ((int)(((byte)(61)))));
-            this.wButton_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.wButton_Login.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
-            this.wButton_Login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.wButton_Login.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
-            this.wButton_Login.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
-            this.wButton_Login.HoverForeColor = System.Drawing.Color.White;
-            this.wButton_Login.IsShowFocusCues = false;
-            this.wButton_Login.Location = new System.Drawing.Point(17, 15);
-            this.wButton_Login.Name = "wButton_Login";
-            this.wButton_Login.Size = new System.Drawing.Size(379, 32);
-            this.wButton_Login.TabIndex = 3;
-            this.wButton_Login.Text = "가입 요청";
-            this.wButton_Login.UseVisualStyleBackColor = false;
+            this.wButton_Submit.ActiveBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(93)))), ((int)(((byte)(137)))));
+            this.wButton_Submit.ActiveBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(93)))), ((int)(((byte)(137)))));
+            this.wButton_Submit.ActiveForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.wButton_Submit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(95)))), ((int)(((byte)(139)))));
+            this.wButton_Submit.BorderRadius = 6;
+            this.wButton_Submit.BorderSize = 2;
+            this.wButton_Submit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.wButton_Submit.DefaultBackGroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(95)))), ((int)(((byte)(139)))));
+            this.wButton_Submit.DefaultBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(95)))), ((int)(((byte)(139)))));
+            this.wButton_Submit.DefaultFontForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.wButton_Submit.FlatAppearance.BorderSize = 0;
+            this.wButton_Submit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(46)))), ((int)(((byte)(51)))));
+            this.wButton_Submit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(54)))), ((int)(((byte)(61)))));
+            this.wButton_Submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.wButton_Submit.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold);
+            this.wButton_Submit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.wButton_Submit.HoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
+            this.wButton_Submit.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
+            this.wButton_Submit.HoverForeColor = System.Drawing.Color.White;
+            this.wButton_Submit.IsShowFocusCues = false;
+            this.wButton_Submit.Location = new System.Drawing.Point(17, 15);
+            this.wButton_Submit.Name = "wButton_Submit";
+            this.wButton_Submit.Size = new System.Drawing.Size(379, 32);
+            this.wButton_Submit.TabIndex = 3;
+            this.wButton_Submit.Text = "가입 요청";
+            this.wButton_Submit.UseVisualStyleBackColor = false;
+            this.wButton_Submit.Click += new System.EventHandler(this.wButton_Submit_Click);
             // 
             // panel_Container
             // 
@@ -113,10 +113,10 @@
             // 
             // panel_Input
             // 
-            this.panel_Input.Controls.Add(this.wTextBox2);
+            this.panel_Input.Controls.Add(this.wTextBox_InputUserPhone);
             this.panel_Input.Controls.Add(this.wTextBox_InputEmail);
             this.panel_Input.Controls.Add(this.wTextBox_ConfirmPassword);
-            this.panel_Input.Controls.Add(this.wTextBox1);
+            this.panel_Input.Controls.Add(this.wTextBox_InputUserName);
             this.panel_Input.Controls.Add(this.wTextBox_InputPassword);
             this.panel_Input.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Input.Location = new System.Drawing.Point(0, 0);
@@ -124,25 +124,27 @@
             this.panel_Input.Size = new System.Drawing.Size(416, 214);
             this.panel_Input.TabIndex = 11;
             // 
-            // wTextBox2
+            // wTextBox_InputUserPhone
             // 
-            this.wTextBox2.Alignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.wTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(35)))), ((int)(((byte)(44)))));
-            this.wTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(90)))), ((int)(((byte)(117)))));
-            this.wTextBox2.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(142)))), ((int)(((byte)(255)))));
-            this.wTextBox2.BorderRadius = 6;
-            this.wTextBox2.BorderSize = 1;
-            this.wTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(139)))));
-            this.wTextBox2.Location = new System.Drawing.Point(17, 182);
-            this.wTextBox2.Multiline = false;
-            this.wTextBox2.Name = "wTextBox2";
-            this.wTextBox2.Padding = new System.Windows.Forms.Padding(14, 7, 10, 7);
-            this.wTextBox2.PasswordChar = false;
-            this.wTextBox2.PlaceholderText = "휴대폰 번호";
-            this.wTextBox2.Size = new System.Drawing.Size(379, 28);
-            this.wTextBox2.TabIndex = 8;
-            this.wTextBox2.Texts = "";
-            this.wTextBox2.UnderlinedStyle = false;
+            this.wTextBox_InputUserPhone.Alignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.wTextBox_InputUserPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(35)))), ((int)(((byte)(44)))));
+            this.wTextBox_InputUserPhone.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(90)))), ((int)(((byte)(117)))));
+            this.wTextBox_InputUserPhone.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(142)))), ((int)(((byte)(255)))));
+            this.wTextBox_InputUserPhone.BorderRadius = 6;
+            this.wTextBox_InputUserPhone.BorderSize = 1;
+            this.wTextBox_InputUserPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(139)))));
+            this.wTextBox_InputUserPhone.Location = new System.Drawing.Point(17, 182);
+            this.wTextBox_InputUserPhone.Multiline = false;
+            this.wTextBox_InputUserPhone.Name = "wTextBox_InputUserPhone";
+            this.wTextBox_InputUserPhone.Padding = new System.Windows.Forms.Padding(14, 7, 10, 7);
+            this.wTextBox_InputUserPhone.PasswordChar = false;
+            this.wTextBox_InputUserPhone.PlaceholderText = "휴대폰 번호";
+            this.wTextBox_InputUserPhone.Size = new System.Drawing.Size(379, 28);
+            this.wTextBox_InputUserPhone.TabIndex = 8;
+            this.wTextBox_InputUserPhone.Texts = "";
+            this.wTextBox_InputUserPhone.UnderlinedStyle = false;
+            this.wTextBox_InputUserPhone.TextChangedEvent += new System.EventHandler(this.wTextBox_InputUserPhone_TextChangedEvent);
+            this.wTextBox_InputUserPhone.KeyDownEvent += new System.Windows.Forms.KeyEventHandler(this.wTextBox_InputUserPhone_KeyDownEvent);
             // 
             // wTextBox_InputEmail
             // 
@@ -163,6 +165,7 @@
             this.wTextBox_InputEmail.TabIndex = 4;
             this.wTextBox_InputEmail.Texts = "";
             this.wTextBox_InputEmail.UnderlinedStyle = false;
+            this.wTextBox_InputEmail.TextChangedEvent += new System.EventHandler(this.wTextBox_InputEmail_TextChangedEvent);
             // 
             // wTextBox_ConfirmPassword
             // 
@@ -184,25 +187,25 @@
             this.wTextBox_ConfirmPassword.Texts = "";
             this.wTextBox_ConfirmPassword.UnderlinedStyle = false;
             // 
-            // wTextBox1
+            // wTextBox_InputUserName
             // 
-            this.wTextBox1.Alignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.wTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(35)))), ((int)(((byte)(44)))));
-            this.wTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(90)))), ((int)(((byte)(117)))));
-            this.wTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(142)))), ((int)(((byte)(255)))));
-            this.wTextBox1.BorderRadius = 6;
-            this.wTextBox1.BorderSize = 1;
-            this.wTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(139)))));
-            this.wTextBox1.Location = new System.Drawing.Point(17, 148);
-            this.wTextBox1.Multiline = false;
-            this.wTextBox1.Name = "wTextBox1";
-            this.wTextBox1.Padding = new System.Windows.Forms.Padding(14, 7, 10, 7);
-            this.wTextBox1.PasswordChar = false;
-            this.wTextBox1.PlaceholderText = "성함";
-            this.wTextBox1.Size = new System.Drawing.Size(379, 28);
-            this.wTextBox1.TabIndex = 7;
-            this.wTextBox1.Texts = "";
-            this.wTextBox1.UnderlinedStyle = false;
+            this.wTextBox_InputUserName.Alignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.wTextBox_InputUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(35)))), ((int)(((byte)(44)))));
+            this.wTextBox_InputUserName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(90)))), ((int)(((byte)(117)))));
+            this.wTextBox_InputUserName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(142)))), ((int)(((byte)(255)))));
+            this.wTextBox_InputUserName.BorderRadius = 6;
+            this.wTextBox_InputUserName.BorderSize = 1;
+            this.wTextBox_InputUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(139)))));
+            this.wTextBox_InputUserName.Location = new System.Drawing.Point(17, 148);
+            this.wTextBox_InputUserName.Multiline = false;
+            this.wTextBox_InputUserName.Name = "wTextBox_InputUserName";
+            this.wTextBox_InputUserName.Padding = new System.Windows.Forms.Padding(14, 7, 10, 7);
+            this.wTextBox_InputUserName.PasswordChar = false;
+            this.wTextBox_InputUserName.PlaceholderText = "성함";
+            this.wTextBox_InputUserName.Size = new System.Drawing.Size(379, 28);
+            this.wTextBox_InputUserName.TabIndex = 7;
+            this.wTextBox_InputUserName.Texts = "";
+            this.wTextBox_InputUserName.UnderlinedStyle = false;
             // 
             // wTextBox_InputPassword
             // 
@@ -227,7 +230,7 @@
             // panel_Bottom
             // 
             this.panel_Bottom.Controls.Add(this.wButton_Close);
-            this.panel_Bottom.Controls.Add(this.wButton_Login);
+            this.panel_Bottom.Controls.Add(this.wButton_Submit);
             this.panel_Bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel_Bottom.Location = new System.Drawing.Point(0, 214);
             this.panel_Bottom.Name = "panel_Bottom";
@@ -255,13 +258,13 @@
         #endregion
 
         private WithusUI.Controls.Buttons.WButton wButton_Close;
-        private WithusUI.Controls.Buttons.WButton wButton_Login;
+        private WithusUI.Controls.Buttons.WButton wButton_Submit;
         private System.Windows.Forms.Panel panel_Container;
         private System.Windows.Forms.Panel panel_Input;
-        private WithusUI.Controls.TextBoxs.WTextBox wTextBox2;
+        private WithusUI.Controls.TextBoxs.WTextBox wTextBox_InputUserPhone;
         private WithusUI.Controls.TextBoxs.WTextBox wTextBox_InputEmail;
         private WithusUI.Controls.TextBoxs.WTextBox wTextBox_ConfirmPassword;
-        private WithusUI.Controls.TextBoxs.WTextBox wTextBox1;
+        private WithusUI.Controls.TextBoxs.WTextBox wTextBox_InputUserName;
         private WithusUI.Controls.TextBoxs.WTextBox wTextBox_InputPassword;
         private System.Windows.Forms.Panel panel_Bottom;
     }
